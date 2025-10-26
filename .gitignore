@@ -1,0 +1,68 @@
+# Environment variables and secrets
+.env
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Output files
+*.log
+*.pdf
+*.txt
+!requirements.txt
+
+# Model files and training data
+*.jsonl
+*.model
+*.bin
+*.safetensors
+ollama_training.txt
+training_data.jsonl
+
+# Generated comparison files
+gpt4_vs_ollama_comparison.json
+ling_output.txt
+
+# Large files
+otherfiles/*.pdf
+otherfiles/*.txt
+!otherfiles/README.md
+
+# Claude artifacts
+.claude/

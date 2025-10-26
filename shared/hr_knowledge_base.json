@@ -1,0 +1,83 @@
+{
+  "leave_policies": {
+    "casual_leave": {
+      "name": "Casual Leave",
+      "annual_quota": 12,
+      "max_consecutive_days": 3,
+      "advance_notice_days": 1,
+      "approval_required": "manager",
+      "description": "Short-term leave for personal matters"
+    },
+    "sick_leave": {
+      "name": "Sick Leave",
+      "annual_quota": 12,
+      "max_consecutive_days": 5,
+      "advance_notice_days": 0,
+      "approval_required": "manager",
+      "medical_certificate_after_days": 3,
+      "description": "Leave for health-related issues"
+    },
+    "annual_leave": {
+      "name": "Annual/Vacation Leave",
+      "annual_quota": 21,
+      "max_consecutive_days": 15,
+      "advance_notice_days": 7,
+      "approval_required": "manager_and_hr",
+      "description": "Planned vacation time"
+    },
+    "maternity_leave": {
+      "name": "Maternity Leave",
+      "annual_quota": 180,
+      "max_consecutive_days": 180,
+      "advance_notice_days": 30,
+      "approval_required": "manager_and_hr",
+      "description": "Leave for childbirth and post-natal care"
+    },
+    "paternity_leave": {
+      "name": "Paternity Leave",
+      "annual_quota": 15,
+      "max_consecutive_days": 15,
+      "advance_notice_days": 7,
+      "approval_required": "manager_and_hr",
+      "description": "Leave for new fathers"
+    },
+    "compensatory_leave": {
+      "name": "Compensatory Off",
+      "annual_quota": 24,
+      "max_consecutive_days": 2,
+      "advance_notice_days": 1,
+      "approval_required": "manager",
+      "description": "Compensation for working on holidays/weekends"
+    }
+  },
+  "approval_hierarchy": {
+    "employee": {
+      "level": 1,
+      "can_approve": []
+    },
+    "manager": {
+      "level": 2,
+      "can_approve": ["employee"],
+      "max_days_approval": 5
+    },
+    "senior_manager": {
+      "level": 3,
+      "can_approve": ["employee", "manager"],
+      "max_days_approval": 10
+    },
+    "hr": {
+      "level": 4,
+      "can_approve": ["employee", "manager", "senior_manager"],
+      "max_days_approval": 180
+    }
+  },
+  "business_rules": {
+    "minimum_notice_emergency": 0,
+    "blackout_periods": ["year_end_closing", "audit_period"],
+    "max_pending_leaves": 3,
+    "auto_reject_after_days": 7,
+    "carry_forward_limit": 5,
+    "encashment_allowed": true,
+    "sandwich_leave_policy": true
+  }
+}
